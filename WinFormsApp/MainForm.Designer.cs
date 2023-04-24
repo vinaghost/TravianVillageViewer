@@ -44,6 +44,7 @@
             WorldSelector = new ComboBox();
             LabelChooseWorld = new Label();
             LabelIgnoreAlly = new Label();
+            checkAllyToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)DataGrid).BeginInit();
             contextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource).BeginInit();
@@ -64,29 +65,29 @@
             // 
             // contextMenu
             // 
-            contextMenu.Items.AddRange(new ToolStripItem[] { checkPlayerToolStripMenuItem, ingorePlayerToolStripMenuItem, ignoreAllyToolStripMenuItem });
+            contextMenu.Items.AddRange(new ToolStripItem[] { ingorePlayerToolStripMenuItem, ignoreAllyToolStripMenuItem, checkPlayerToolStripMenuItem, checkAllyToolStripMenuItem });
             contextMenu.Name = "contextMenuStrip1";
             contextMenu.RenderMode = ToolStripRenderMode.System;
-            contextMenu.Size = new Size(144, 70);
+            contextMenu.Size = new Size(181, 114);
             // 
             // checkPlayerToolStripMenuItem
             // 
             checkPlayerToolStripMenuItem.Name = "checkPlayerToolStripMenuItem";
-            checkPlayerToolStripMenuItem.Size = new Size(143, 22);
+            checkPlayerToolStripMenuItem.Size = new Size(180, 22);
             checkPlayerToolStripMenuItem.Text = "Check player";
             checkPlayerToolStripMenuItem.Click += CheckPlayerToolStripMenuItem_Click;
             // 
             // ingorePlayerToolStripMenuItem
             // 
             ingorePlayerToolStripMenuItem.Name = "ingorePlayerToolStripMenuItem";
-            ingorePlayerToolStripMenuItem.Size = new Size(143, 22);
+            ingorePlayerToolStripMenuItem.Size = new Size(180, 22);
             ingorePlayerToolStripMenuItem.Text = "Ingore player";
             ingorePlayerToolStripMenuItem.Click += IngorePlayerToolStripMenuItem_Click;
             // 
             // ignoreAllyToolStripMenuItem
             // 
             ignoreAllyToolStripMenuItem.Name = "ignoreAllyToolStripMenuItem";
-            ignoreAllyToolStripMenuItem.Size = new Size(143, 22);
+            ignoreAllyToolStripMenuItem.Size = new Size(180, 22);
             ignoreAllyToolStripMenuItem.Text = "Ignore ally";
             ignoreAllyToolStripMenuItem.Click += IgnoreAllyToolStripMenuItem_Click;
             // 
@@ -199,6 +200,13 @@
             LabelIgnoreAlly.Text = "Ignore ally";
             LabelIgnoreAlly.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // checkAllyToolStripMenuItem
+            // 
+            checkAllyToolStripMenuItem.Name = "checkAllyToolStripMenuItem";
+            checkAllyToolStripMenuItem.Size = new Size(180, 22);
+            checkAllyToolStripMenuItem.Text = "Check ally";
+            checkAllyToolStripMenuItem.Click += CheckAllyToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -225,12 +233,6 @@
         private ToolStripMenuItem ingorePlayerToolStripMenuItem;
         private ToolStripMenuItem ignoreAllyToolStripMenuItem;
         private BindingSource bindingSource;
-        private DataGridViewTextBoxColumn villageNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn playerNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn allyNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn coordDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn popDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn distanceDataGridViewTextBoxColumn;
         private TableLayoutPanel MainLayoutPanel;
         private TableLayoutPanel LeftLayoutPanel;
         private Button ApplyBtn;
@@ -240,5 +242,6 @@
         private ComboBox WorldSelector;
         private Label LabelChooseWorld;
         private Label LabelIgnoreAlly;
+        private ToolStripMenuItem checkAllyToolStripMenuItem;
     }
 }

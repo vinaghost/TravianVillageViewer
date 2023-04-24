@@ -104,7 +104,17 @@ namespace WinFormsApp
 
             var playerVillages = await ApiHelper.GetPlayerVillages(_worlds[WorldSelector.SelectedIndex].Url, village.PlayerId);
 
-            using var playerForm = new PlayerForm(village.PlayerName, village.AllyName, playerVillages);
+            using var playerForm = new VillagesForm($"{village.PlayerName} ({village.AllyName})", playerVillages);
+            playerForm.ShowDialog();
+        }
+
+        private async void CheckAllyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var village = _villages.Find(x => x.Id == villageIndex);
+
+            var playerVillages = await ApiHelper.GetAllianceVillages(_worlds[WorldSelector.SelectedIndex].Url, village.AllyId);
+
+            using var playerForm = new VillagesForm($"{village.AllyName}", playerVillages);
             playerForm.ShowDialog();
         }
 
@@ -142,6 +152,7 @@ namespace WinFormsApp
                 new () { Name = "AllyName", HeaderText = "Ally name", DataPropertyName = "AllyName" },
                 new () { Name = "Coordinates", HeaderText = "Coordinates", DataPropertyName = "Coordinates" },
                 new () { Name = "Population", HeaderText = "Population", DataPropertyName = "Pop" },
+                new () { Name = "IsCapital", HeaderText = "Capital", DataPropertyName = "IsCapital" },
                 new () { Name = "Distance", HeaderText = "Distance", DataPropertyName = "Distance" },
             };
 

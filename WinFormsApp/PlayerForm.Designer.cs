@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp
 {
-    partial class PlayerForm
+    partial class VillagesForm
     {
         /// <summary>
         /// Required designer variable.

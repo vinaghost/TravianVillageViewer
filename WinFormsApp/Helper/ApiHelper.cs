@@ -42,6 +42,13 @@ namespace WinFormsApp.Helper
             return content;
         }
 
+        public static async Task<List<Village>> GetAllianceVillages(string world, int index)
+        {
+            var response = await _httpClient.GetAsync($"{_baseUrl}/alliance/{world}/{index}");
+            var content = await response.Content.ReadFromJsonAsync<List<Village>>();
+            return content;
+        }
+
         public static async Task<List<TravianObject>> GetPlayers(string world)
         {
             var response = await _httpClient.GetAsync($"{_baseUrl}/player/{world}");

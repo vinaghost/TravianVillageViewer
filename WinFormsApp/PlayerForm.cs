@@ -2,15 +2,15 @@
 
 namespace WinFormsApp
 {
-    public partial class PlayerForm : Form
+    public partial class VillagesForm : Form
     {
-        public PlayerForm(string playerName, string playerAlly, List<Village> villages)
+        public VillagesForm(string title, List<Village> villages)
         {
             InitializeComponent();
             GenerateColumn();
             DataGrid.DataSource = BindingSource;
             BindingSource.DataSource = villages;
-            Text = $"Player: {playerName} ({playerAlly})";
+            Text = title;
         }
 
         private void GenerateColumn()
@@ -20,8 +20,10 @@ namespace WinFormsApp
             var columns = new List<DataGridViewTextBoxColumn>()
             {
                 new () { Name = "VillageName", HeaderText = "Village name", DataPropertyName = "Name" },
+                new () { Name = "VillagePlayer", HeaderText = "Player name", DataPropertyName = "PlayerName" },
                 new () { Name = "Coordinates", HeaderText = "Coordinates", DataPropertyName = "Coordinates" },
                 new () { Name = "Population", HeaderText = "Population", DataPropertyName = "Pop" },
+                new () { Name = "IsCapital", HeaderText = "Capital", DataPropertyName = "IsCapital" },
             };
 
             DataGrid.Columns.AddRange(columns.ToArray());
