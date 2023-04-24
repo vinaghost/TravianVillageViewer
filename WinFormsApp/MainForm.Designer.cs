@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DataGrid = new DataGridView();
             contextMenu = new ContextMenuStrip(components);
-            checkPlayerToolStripMenuItem = new ToolStripMenuItem();
             ingorePlayerToolStripMenuItem = new ToolStripMenuItem();
             ignoreAllyToolStripMenuItem = new ToolStripMenuItem();
+            checkPlayerToolStripMenuItem = new ToolStripMenuItem();
+            checkAllyToolStripMenuItem = new ToolStripMenuItem();
             bindingSource = new BindingSource(components);
             MainLayoutPanel = new TableLayoutPanel();
             LeftLayoutPanel = new TableLayoutPanel();
@@ -44,7 +46,6 @@
             WorldSelector = new ComboBox();
             LabelChooseWorld = new Label();
             LabelIgnoreAlly = new Label();
-            checkAllyToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)DataGrid).BeginInit();
             contextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource).BeginInit();
@@ -68,28 +69,35 @@
             contextMenu.Items.AddRange(new ToolStripItem[] { ingorePlayerToolStripMenuItem, ignoreAllyToolStripMenuItem, checkPlayerToolStripMenuItem, checkAllyToolStripMenuItem });
             contextMenu.Name = "contextMenuStrip1";
             contextMenu.RenderMode = ToolStripRenderMode.System;
-            contextMenu.Size = new Size(181, 114);
-            // 
-            // checkPlayerToolStripMenuItem
-            // 
-            checkPlayerToolStripMenuItem.Name = "checkPlayerToolStripMenuItem";
-            checkPlayerToolStripMenuItem.Size = new Size(180, 22);
-            checkPlayerToolStripMenuItem.Text = "Check player";
-            checkPlayerToolStripMenuItem.Click += CheckPlayerToolStripMenuItem_Click;
+            contextMenu.Size = new Size(144, 92);
             // 
             // ingorePlayerToolStripMenuItem
             // 
             ingorePlayerToolStripMenuItem.Name = "ingorePlayerToolStripMenuItem";
-            ingorePlayerToolStripMenuItem.Size = new Size(180, 22);
+            ingorePlayerToolStripMenuItem.Size = new Size(143, 22);
             ingorePlayerToolStripMenuItem.Text = "Ingore player";
             ingorePlayerToolStripMenuItem.Click += IngorePlayerToolStripMenuItem_Click;
             // 
             // ignoreAllyToolStripMenuItem
             // 
             ignoreAllyToolStripMenuItem.Name = "ignoreAllyToolStripMenuItem";
-            ignoreAllyToolStripMenuItem.Size = new Size(180, 22);
+            ignoreAllyToolStripMenuItem.Size = new Size(143, 22);
             ignoreAllyToolStripMenuItem.Text = "Ignore ally";
             ignoreAllyToolStripMenuItem.Click += IgnoreAllyToolStripMenuItem_Click;
+            // 
+            // checkPlayerToolStripMenuItem
+            // 
+            checkPlayerToolStripMenuItem.Name = "checkPlayerToolStripMenuItem";
+            checkPlayerToolStripMenuItem.Size = new Size(143, 22);
+            checkPlayerToolStripMenuItem.Text = "Check player";
+            checkPlayerToolStripMenuItem.Click += CheckPlayerToolStripMenuItem_Click;
+            // 
+            // checkAllyToolStripMenuItem
+            // 
+            checkAllyToolStripMenuItem.Name = "checkAllyToolStripMenuItem";
+            checkAllyToolStripMenuItem.Size = new Size(143, 22);
+            checkAllyToolStripMenuItem.Text = "Check ally";
+            checkAllyToolStripMenuItem.Click += CheckAllyToolStripMenuItem_Click;
             // 
             // MainLayoutPanel
             // 
@@ -200,21 +208,15 @@
             LabelIgnoreAlly.Text = "Ignore ally";
             LabelIgnoreAlly.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // checkAllyToolStripMenuItem
-            // 
-            checkAllyToolStripMenuItem.Name = "checkAllyToolStripMenuItem";
-            checkAllyToolStripMenuItem.Size = new Size(180, 22);
-            checkAllyToolStripMenuItem.Text = "Check ally";
-            checkAllyToolStripMenuItem.Click += CheckAllyToolStripMenuItem_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(MainLayoutPanel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
-            Text = "Travian's village lookup";
+            Text = "Travian's villages viewer";
             FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)DataGrid).EndInit();
